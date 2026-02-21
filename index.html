@@ -60,6 +60,14 @@
     .toc ol { margin-left: 18px; font-size: 0.88rem; }
     .toc li { margin-bottom: 3px; }
     .footer { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e5ea; font-size: 0.82rem; color: #6e6e73; }
+    .disclaimer-box {
+      background: #fff8e6;
+      border-left: 4px solid #f0a500;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
     @media (max-width: 600px) {
       .container { padding: 24px 20px; margin-top: 16px; }
       h1 { font-size: 1.5rem; }
@@ -71,8 +79,8 @@
 
   <!-- Language Switcher -->
   <div class="lang-switcher">
-    <button class="lang-btn active" onclick="switchLang('en')">🇬🇧 English</button>
-    <button class="lang-btn" onclick="switchLang('tr')">🇹🇷 Türkçe</button>
+    <button class="lang-btn active" onclick="switchLang('en', event)">🇬🇧 English</button>
+    <button class="lang-btn" onclick="switchLang('tr', event)">🇹🇷 Türkçe</button>
   </div>
 
   <!-- ========== ENGLISH ========== -->
@@ -81,6 +89,7 @@
     <h1>Privacy Policy</h1>
     <p class="subtitle">
       <strong>App:</strong> Learn English With Games &nbsp;|&nbsp;
+      <strong>Developer:</strong> Muhammed Talha Polat &nbsp;|&nbsp;
       <strong>Effective Date:</strong> February 21, 2026 &nbsp;|&nbsp;
       <strong>Last Updated:</strong> February 21, 2026
     </p>
@@ -90,16 +99,18 @@
       <ol>
         <li><a href="#en-overview">Overview</a></li>
         <li><a href="#en-data-collected">Information We Collect</a></li>
+        <li><a href="#en-lawful-basis">Lawful Basis for Processing</a></li>
         <li><a href="#en-how-used">How We Use Your Information</a></li>
-        <li><a href="#en-third-parties">Third-Party Services</a></li>
+        <li><a href="#en-third-parties">Third-Party Services &amp; Data Processors</a></li>
         <li><a href="#en-data-sharing">Data Sharing</a></li>
         <li><a href="#en-data-storage">Data Storage &amp; Retention</a></li>
         <li><a href="#en-guest-mode">Guest Mode</a></li>
         <li><a href="#en-purchases">In-App Purchases &amp; Subscriptions</a></li>
         <li><a href="#en-permissions">Device Permissions</a></li>
         <li><a href="#en-children">Children's Privacy (COPPA)</a></li>
-        <li><a href="#en-gdpr">Your Rights (GDPR / CCPA)</a></li>
+        <li><a href="#en-rights">Your Rights (GDPR / CCPA)</a></li>
         <li><a href="#en-security">Data Security</a></li>
+        <li><a href="#en-liability">Disclaimer &amp; Limitation of Liability</a></li>
         <li><a href="#en-changes">Changes to This Policy</a></li>
         <li><a href="#en-contact">Contact Us</a></li>
       </ol>
@@ -108,16 +119,17 @@
     <h2 id="en-overview">1. Overview</h2>
     <p>
       <strong>Learn English With Games</strong> ("the App", "we", "our", or "us") is an educational
-      mobile application developed by <strong>Muhammed Talha Polat</strong> ("Developer"). This Privacy Policy
-      describes how we collect, use, store, and protect information from users ("you") of our iOS application.
+      mobile application developed and operated by <strong>Muhammed Talha Polat</strong> ("Developer", "data controller").
+      This Privacy Policy describes how we collect, use, store, and protect information from users ("you") of our iOS application
+      available on the Apple App Store.
     </p>
     <p>
-      By downloading, installing, or using the App, you agree to the practices described in this
-      Privacy Policy. If you do not agree, please do not use the App.
+      By downloading, installing, or using the App, you acknowledge that you have read, understood, and agree to
+      the practices described in this Privacy Policy. If you do not agree, please do not use the App.
     </p>
     <p>
-      We are committed to protecting your privacy. We collect only the data necessary to provide the
-      App's features and do not sell your personal information to third parties.
+      We are committed to protecting your privacy. We collect only the minimum data necessary to provide the
+      App's core features and <strong>do not sell your personal information</strong> to third parties.
     </p>
 
     <h2 id="en-data-collected">2. Information We Collect</h2>
@@ -126,34 +138,68 @@
     <ul>
       <li><strong>Display Name / Username:</strong> A nickname you choose for your profile and leaderboards.</li>
       <li><strong>Email Address:</strong> Collected when you sign in with Google or Apple ID.</li>
-      <li><strong>Avatar Selection:</strong> The avatar index you choose (0–11) from the in-app avatar picker.</li>
-      <li><strong>Country / Flag:</strong> The country flag you select from a list of 35+ countries.</li>
-      <li><strong>Language Preference:</strong> The target language and UI language you select.</li>
+      <li><strong>Avatar Selection:</strong> An avatar index (0–11) from the in-app avatar picker.</li>
+      <li><strong>Country / Flag:</strong> A country flag you select from a list of available countries.</li>
+      <li><strong>Language Preference:</strong> Your target language and UI language selection.</li>
     </ul>
 
     <h3>2.2 Information Collected Automatically</h3>
     <ul>
       <li><strong>User ID (UID):</strong> A unique, anonymized identifier generated by Firebase Authentication.</li>
-      <li><strong>Game Scores &amp; Performance:</strong> Best scores, correct/incorrect answers, XP earned, and games played for each game type (TimeRace, Pasaparola, WordFill).</li>
+      <li><strong>Game Scores &amp; Performance:</strong> Best scores, correct/incorrect answers, XP earned, and games played per game type (TimeRace, Pasaparola, WordFill).</li>
       <li><strong>Play Activity:</strong> Daily play counts, daily XP, streak count, and last-played date.</li>
-      <li><strong>Leaderboard Entries:</strong> Your score and UID submitted to global daily, weekly, monthly, and all-time leaderboards.</li>
-      <li><strong>Premium Status:</strong> Whether you hold an active premium subscription.</li>
-      <li><strong>Profile Completion Status:</strong> A boolean indicating whether you have completed profile setup.</li>
+      <li><strong>Leaderboard Entries:</strong> Your score and UID submitted to global leaderboards (daily, weekly, monthly, all-time).</li>
+      <li><strong>Premium Status:</strong> A boolean value indicating whether you hold an active premium subscription.</li>
+      <li><strong>Profile Completion Status:</strong> A boolean indicating whether profile setup is complete.</li>
     </ul>
 
     <h3>2.3 Information We Do NOT Collect</h3>
     <ul>
-      <li>Location data (GPS or otherwise)</li>
+      <li>GPS or precise location data</li>
       <li>Camera or microphone data</li>
       <li>Contacts or address book</li>
       <li>Photos or media files</li>
       <li>Browser history or cross-app tracking data</li>
       <li>Health or biometric data</li>
       <li>Advertising identifiers (IDFA)</li>
+      <li>Payment card numbers, bank account details, or full billing information</li>
     </ul>
 
-    <h2 id="en-how-used">3. How We Use Your Information</h2>
-    <p>We use collected information solely to:</p>
+    <h2 id="en-lawful-basis">3. Lawful Basis for Processing (GDPR)</h2>
+    <p>For users in the European Economic Area (EEA) and the United Kingdom, we rely on the following lawful bases under Article 6 of the GDPR:</p>
+    <table>
+      <tr>
+        <th>Processing Activity</th>
+        <th>Lawful Basis</th>
+      </tr>
+      <tr>
+        <td>Account creation, authentication, profile management</td>
+        <td>Art. 6(1)(b) – Performance of a contract</td>
+      </tr>
+      <tr>
+        <td>Game score tracking, leaderboards, XP, streaks</td>
+        <td>Art. 6(1)(b) – Performance of a contract</td>
+      </tr>
+      <tr>
+        <td>Subscription verification and management</td>
+        <td>Art. 6(1)(b) – Performance of a contract</td>
+      </tr>
+      <tr>
+        <td>Security measures, fraud prevention, profanity filtering</td>
+        <td>Art. 6(1)(f) – Legitimate interests</td>
+      </tr>
+      <tr>
+        <td>App improvement using anonymized data</td>
+        <td>Art. 6(1)(f) – Legitimate interests</td>
+      </tr>
+      <tr>
+        <td>Legal compliance (disclosures to authorities)</td>
+        <td>Art. 6(1)(c) – Legal obligation</td>
+      </tr>
+    </table>
+
+    <h2 id="en-how-used">4. How We Use Your Information</h2>
+    <p>We use collected information <strong>solely</strong> to:</p>
     <ul>
       <li>Create and manage your user account and profile.</li>
       <li>Authenticate you securely via Google Sign-In or Apple Sign-In.</li>
@@ -161,71 +207,110 @@
       <li>Populate and display global leaderboards.</li>
       <li>Enforce daily play limits based on your account tier (Guest, Free, Premium).</li>
       <li>Manage and verify your in-app subscription status.</li>
-      <li>Moderate usernames using our profanity filter to maintain a respectful environment.</li>
-      <li>Improve app functionality and fix bugs (using anonymized data only).</li>
+      <li>Moderate usernames using our embedded profanity filter.</li>
+      <li>Improve app functionality and fix bugs (using anonymized, aggregated data only).</li>
     </ul>
     <p>We do <strong>not</strong> use your data for:</p>
     <ul>
       <li>Targeted or behavioral advertising</li>
-      <li>Selling or renting data to third parties</li>
-      <li>Automated decision-making that produces legal effects</li>
+      <li>Selling, renting, or licensing data to third parties</li>
+      <li>Automated decision-making that produces legal or similarly significant effects</li>
+      <li>Profiling for marketing purposes</li>
       <li>Any purpose beyond delivering the App's core features</li>
     </ul>
 
-    <h2 id="en-third-parties">4. Third-Party Services</h2>
-    <p>The App integrates the following third-party services. Each has its own privacy policy governing how they process your data:</p>
+    <h2 id="en-third-parties">5. Third-Party Services &amp; Data Processors</h2>
+    <p>
+      The App integrates the following third-party services. We have entered into (or rely on)
+      Data Processing Agreements (DPAs) with each processor. Each maintains their own privacy policy
+      governing how they process data:
+    </p>
 
-    <h3>4.1 Firebase (Google LLC)</h3>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Purpose</th>
+        <th>Role</th>
+        <th>Privacy Policy</th>
+      </tr>
+      <tr>
+        <td>Firebase Authentication (Google LLC)</td>
+        <td>User sign-in and identity management</td>
+        <td>Processor</td>
+        <td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com →</a></td>
+      </tr>
+      <tr>
+        <td>Cloud Firestore (Google LLC)</td>
+        <td>Cloud database for user data and scores</td>
+        <td>Processor</td>
+        <td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com →</a></td>
+      </tr>
+      <tr>
+        <td>Google Sign-In (Google LLC)</td>
+        <td>OAuth 2.0-based authentication</td>
+        <td>Processor</td>
+        <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com →</a></td>
+      </tr>
+      <tr>
+        <td>Sign in with Apple (Apple Inc.)</td>
+        <td>OAuth-based authentication</td>
+        <td>Processor</td>
+        <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy →</a></td>
+      </tr>
+      <tr>
+        <td>RevenueCat, Inc.</td>
+        <td>In-app purchase and subscription management</td>
+        <td>Processor</td>
+        <td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy →</a></td>
+      </tr>
+    </table>
+
+    <h3>5.1 Firebase (Google LLC)</h3>
+    <p>
+      Firebase Authentication stores your UID, email, and display name. Cloud Firestore stores your profile,
+      game statistics, and leaderboard entries. Data is hosted on Google Cloud servers, primarily in the United States.
+      Google maintains Standard Contractual Clauses (SCCs) for EU data transfers and participates in the
+      EU-US Data Privacy Framework. Firebase holds ISO 27001, SOC 1, SOC 2, and SOC 3 certifications.
+    </p>
+
+    <h3>5.2 Google Sign-In (Google LLC)</h3>
+    <p>
+      We receive your Google account's UID, email address, and display name via OAuth 2.0. We do not
+      request access to Gmail, Google Drive, Google Calendar, or any other Google services beyond basic profile information.
+    </p>
+
+    <h3>5.3 Sign in with Apple (Apple Inc.)</h3>
+    <p>
+      Apple may share a verified email address (or a private relay address) and your name upon first sign-in.
+      Authentication uses a cryptographically secure nonce (SHA-256) to protect against replay attacks.
+      Apple does not share your Apple ID password or payment information with us.
+    </p>
+
+    <h3>5.4 RevenueCat, Inc.</h3>
+    <p>
+      RevenueCat receives Apple purchase receipts and your Firebase UID to verify and track subscription
+      entitlements. RevenueCat does <strong>not</strong> receive your full name, email address, or payment
+      card details — those remain exclusively with Apple. Processing is carried out under Art. 6(1)(b) GDPR
+      (contractual necessity). RevenueCat's GDPR compliance documentation is available at
+      <a href="https://www.revenuecat.com/gdpr/" target="_blank">revenuecat.com/gdpr</a>.
+    </p>
+
+    <h2 id="en-data-sharing">6. Data Sharing</h2>
+    <p>We share your information only in the following strictly limited circumstances:</p>
     <ul>
-      <li><strong>Firebase Authentication:</strong> Handles sign-in via Google and Apple ID. Stores your UID, email, and display name securely.</li>
-      <li><strong>Cloud Firestore:</strong> Our cloud database. Stores your profile data, game stats, play activity, and leaderboard scores.</li>
+      <li><strong>With Service Providers (Data Processors):</strong> Firebase (Google) and RevenueCat, solely to operate the App as described in Section 5. These processors are contractually prohibited from using your data for their own purposes.</li>
+      <li><strong>Leaderboard Display:</strong> Your display name and score are visible to other App users on in-app leaderboards. Your email address and UID are never shown publicly.</li>
+      <li><strong>Legal Compliance:</strong> If required by applicable law, court order, regulatory obligation, or lawful governmental authority, we may disclose data to comply with such legal obligations. Where legally permissible, we will notify you before disclosure.</li>
+      <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of substantially all assets, user data may be transferred to the successor entity, subject to at least the same protections as this Privacy Policy.</li>
     </ul>
-    <p>
-      Data stored in Firebase is located on Google Cloud servers, primarily in the United States.
-      Firebase complies with GDPR and maintains Standard Contractual Clauses for data transfers.<br/>
-      <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a>
-    </p>
+    <p>We <strong>never sell, rent, trade, or license</strong> your personal data to third parties, advertisers, data brokers, or analytics companies for their own purposes.</p>
 
-    <h3>4.2 Google Sign-In (Google LLC)</h3>
-    <p>
-      Used for OAuth-based authentication. We receive your Google account's UID, email address, and
-      display name. We do not request access to Gmail, Google Drive, or any other Google services.<br/>
-      <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy →</a>
-    </p>
+    <h2 id="en-data-storage">7. Data Storage &amp; Retention</h2>
 
-    <h3>4.3 Sign in with Apple (Apple Inc.)</h3>
-    <p>
-      Used for OAuth-based authentication. Apple may share a verified email address (or a private relay
-      address) and your name. Authentication uses a cryptographically secure nonce to protect against
-      replay attacks.<br/>
-      <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy →</a>
-    </p>
+    <h3>7.1 Cloud Storage (Authenticated Users)</h3>
+    <p>Your account data is stored in Firebase Cloud Firestore. Data is retained for as long as you maintain an active account. Firestore data is encrypted at rest (AES-256) and in transit (TLS) by Google.</p>
 
-    <h3>4.4 RevenueCat, Inc.</h3>
-    <p>
-      Manages in-app purchase and subscription tracking. RevenueCat receives your Apple-generated
-      purchase receipt and a user identifier (your Firebase UID) to verify and track subscription
-      entitlements. RevenueCat does <strong>not</strong> receive your full name, email address, or
-      payment card details — those remain with Apple.<br/>
-      <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy →</a>
-    </p>
-
-    <h2 id="en-data-sharing">5. Data Sharing</h2>
-    <p>We share your information only in the following limited circumstances:</p>
-    <ul>
-      <li><strong>With Service Providers:</strong> Firebase (Google) and RevenueCat as described above, strictly to operate the App.</li>
-      <li><strong>Leaderboard Display:</strong> Your display name and score are visible to other users on in-app leaderboards. Your email address and UID are never shown publicly.</li>
-      <li><strong>Legal Compliance:</strong> If required by applicable law, court order, or governmental authority, we may disclose data to comply with legal obligations.</li>
-      <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, user data may be transferred to the successor entity, subject to this Privacy Policy.</li>
-    </ul>
-    <p>We <strong>never sell</strong> your personal data to third parties, advertisers, or data brokers.</p>
-
-    <h2 id="en-data-storage">6. Data Storage &amp; Retention</h2>
-
-    <h3>6.1 Cloud Storage (Authenticated Users)</h3>
-    <p>Your account data is stored in Firebase Cloud Firestore. Data is retained for as long as you maintain an active account. Firestore data is encrypted at rest and in transit by Google.</p>
-
-    <h3>6.2 Local Storage (On-Device)</h3>
+    <h3>7.2 Local Storage (On-Device)</h3>
     <p>The App stores the following data locally on your device using iOS UserDefaults:</p>
     <ul>
       <li>Language preferences</li>
@@ -233,19 +318,47 @@
       <li>Best scores (local cache)</li>
       <li>Premium status cache</li>
       <li>Daily play count tracking</li>
-      <li>Guest mode statistics (when not signed in)</li>
+      <li>Guest mode statistics</li>
     </ul>
-    <p>Local data is stored only on your device and is deleted when you uninstall the App.</p>
+    <p>Local data is stored only on your device and is deleted when you uninstall the App. We have no access to locally-stored data.</p>
 
-    <h3>6.3 Data Retention</h3>
-    <p>
-      Authenticated user data is retained in Firestore until you request account deletion (see Section 11).
-      Guest user data exists only on-device and is not retained after uninstalling the App.
-      Leaderboard entries are retained for the relevant period (daily: 24 hours, weekly: 7 days,
-      monthly: calendar month, all-time: indefinitely).
-    </p>
+    <h3>7.3 Retention Periods</h3>
+    <table>
+      <tr>
+        <th>Data Type</th>
+        <th>Retention Period</th>
+      </tr>
+      <tr>
+        <td>Account data (profile, scores, XP)</td>
+        <td>Until account deletion request or 3 years of inactivity</td>
+      </tr>
+      <tr>
+        <td>Leaderboard — daily entries</td>
+        <td>24 hours</td>
+      </tr>
+      <tr>
+        <td>Leaderboard — weekly entries</td>
+        <td>7 days</td>
+      </tr>
+      <tr>
+        <td>Leaderboard — monthly entries</td>
+        <td>Calendar month</td>
+      </tr>
+      <tr>
+        <td>Leaderboard — all-time entries</td>
+        <td>Indefinitely (or until account deletion)</td>
+      </tr>
+      <tr>
+        <td>Backup / residual data after deletion</td>
+        <td>Up to 90 days before automatic purge</td>
+      </tr>
+      <tr>
+        <td>Guest user data (on-device only)</td>
+        <td>Until App is uninstalled</td>
+      </tr>
+    </table>
 
-    <h2 id="en-guest-mode">7. Guest Mode</h2>
+    <h2 id="en-guest-mode">8. Guest Mode</h2>
     <p>You may use the App as a guest without creating an account. In Guest Mode:</p>
     <ul>
       <li>No personal information is collected or transmitted to our servers.</li>
@@ -255,103 +368,175 @@
       <li>You may convert to a full account at any time; guest data is not automatically transferred.</li>
     </ul>
 
-    <h2 id="en-purchases">8. In-App Purchases &amp; Subscriptions</h2>
+    <h2 id="en-purchases">9. In-App Purchases &amp; Subscriptions</h2>
     <p>
-      The App offers optional premium subscriptions (monthly and yearly) that unlock unlimited daily gameplay.
-      All purchases are processed by <strong>Apple's App Store</strong> payment system.
-      We do not directly collect or store your payment card details, billing address, or financial account information.
+      The App offers optional premium subscriptions (monthly and yearly) that unlock unlimited daily gameplay
+      and additional features. All purchases are processed exclusively by <strong>Apple's App Store</strong>
+      payment infrastructure. We do not directly collect, store, or process your payment card details,
+      billing address, or any financial account information.
     </p>
     <p>RevenueCat receives Apple purchase receipts and your Firebase UID solely to verify subscription entitlements. Your premium status (a boolean) is synced to your Firestore profile.</p>
-    <p>For refund requests or subscription management, please use your Apple ID account settings or contact Apple Support directly.</p>
+    <p>
+      <strong>Refunds &amp; Cancellations:</strong> All subscription management, including cancellation and refund
+      requests, must be handled through your Apple ID account settings or Apple Support. We have no ability
+      to process refunds directly.
+    </p>
+    <p>
+      <strong>Auto-Renewal Disclosure:</strong> Subscriptions automatically renew unless cancelled at least
+      24 hours before the end of the current billing period. Your Apple ID account will be charged for renewal
+      within 24 hours prior to the end of the current period.
+    </p>
 
-    <h2 id="en-permissions">9. Device Permissions</h2>
+    <h2 id="en-permissions">10. Device Permissions</h2>
     <p>The App does <strong>not</strong> request any sensitive device permissions, including:</p>
     <ul>
       <li>Camera</li>
       <li>Microphone</li>
-      <li>Location Services</li>
+      <li>Location Services (GPS)</li>
       <li>Contacts / Address Book</li>
       <li>Photos / Media Library</li>
       <li>Health Data</li>
       <li>Bluetooth</li>
-      <li>Push Notifications (optional – you will be prompted if this changes)</li>
     </ul>
-    <p>The only URL scheme registered in the App is used for redirecting back from Google Sign-In after OAuth authentication, which is standard OAuth behavior.</p>
+    <p>The only URL scheme registered in the App is used for redirecting back from Google Sign-In after OAuth authentication — this is standard OAuth 2.0 behavior and does not grant access to any other app or service.</p>
 
-    <h2 id="en-children">10. Children's Privacy (COPPA)</h2>
+    <h2 id="en-children">11. Children's Privacy (COPPA)</h2>
     <p>
-      The App is designed as an educational English-learning game and may be suitable for users of all ages.
-      However, the App is not specifically directed at children under the age of 13 in the United States
-      (as defined by COPPA) or children under 16 in the European Union (as defined by GDPR).
+      The App is an educational English-learning game that may be suitable for users of all ages.
+      However, the App is not specifically directed at children under the age of <strong>13</strong> in the
+      United States (COPPA) or children under <strong>16</strong> in the European Union (GDPR-K).
     </p>
     <p>
       We do not knowingly collect personal information from children under 13 without verifiable parental consent.
       If you are a parent or guardian and believe your child under 13 has provided personal information without
-      consent, please contact us immediately at the email address in Section 14, and we will promptly delete
-      such information.
+      your consent, please contact us immediately at the address in Section 16, and we will promptly delete
+      such information from our systems.
     </p>
-    <p>If you wish to allow a child under 13 to use the App, we recommend the <strong>Guest Mode</strong>, which does not require account creation or collection of personal information.</p>
+    <p>
+      For children under 13, we recommend the <strong>Guest Mode</strong>, which requires no account
+      creation and collects no personal information.
+    </p>
 
-    <h2 id="en-gdpr">11. Your Rights (GDPR / CCPA &amp; Similar Laws)</h2>
+    <h2 id="en-rights">12. Your Rights (GDPR / CCPA &amp; Similar Laws)</h2>
     <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
+
+    <h3>12.1 Rights Under GDPR (EEA / UK Users)</h3>
     <ul>
-      <li><strong>Right of Access:</strong> You may request a copy of the personal data we hold about you.</li>
-      <li><strong>Right to Rectification:</strong> You may correct inaccurate or incomplete data via the in-app profile settings at any time.</li>
-      <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> You may request deletion of your account and all associated personal data.</li>
-      <li><strong>Right to Data Portability:</strong> You may request a copy of your data in a machine-readable format.</li>
-      <li><strong>Right to Restriction of Processing:</strong> You may request that we limit how we process your data in certain circumstances.</li>
-      <li><strong>Right to Object:</strong> You may object to processing based on legitimate interests.</li>
-      <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent, you may withdraw consent at any time without affecting prior processing.</li>
+      <li><strong>Right of Access (Art. 15):</strong> Request a copy of the personal data we hold about you.</li>
+      <li><strong>Right to Rectification (Art. 16):</strong> Correct inaccurate or incomplete data via in-app profile settings at any time.</li>
+      <li><strong>Right to Erasure — "Right to be Forgotten" (Art. 17):</strong> Request deletion of your account and all associated personal data.</li>
+      <li><strong>Right to Data Portability (Art. 20):</strong> Request your data in a structured, commonly used, machine-readable format.</li>
+      <li><strong>Right to Restriction of Processing (Art. 18):</strong> Request that we limit processing in certain circumstances.</li>
+      <li><strong>Right to Object (Art. 21):</strong> Object to processing based on legitimate interests.</li>
+      <li><strong>Right to Withdraw Consent (Art. 7(3)):</strong> Where processing is consent-based, withdraw consent at any time without affecting prior processing.</li>
+      <li><strong>Right to Lodge a Complaint (Art. 77):</strong> File a complaint with a data protection supervisory authority in your EU member state or in the UK (ICO) if you believe your data has been processed unlawfully.</li>
     </ul>
+
+    <h3>12.2 Rights Under CCPA (California Residents)</h3>
+    <ul>
+      <li>Right to know what personal information is collected and how it is used.</li>
+      <li>Right to delete personal information (subject to certain exceptions).</li>
+      <li>Right to opt-out of the sale of personal information (we do <strong>not</strong> sell personal information).</li>
+      <li>Right to non-discrimination for exercising your rights.</li>
+    </ul>
+
+    <h3>12.3 Account &amp; Data Deletion</h3>
     <p>
-      <strong>CCPA (California Residents):</strong> California residents have the right to know what personal
-      information is collected, the right to delete personal information, and the right to opt-out of sale
-      of personal information (we do not sell personal information).
-    </p>
-    <p>
-      To exercise any of these rights, please contact us at the email address provided in Section 14.
-      We will respond within <strong>30 days</strong> (or 45 days for complex requests). We do not charge a fee for exercising your rights.
-    </p>
-    <p>
-      <strong>Account &amp; Data Deletion:</strong> To delete your account and all associated data, please
-      email us with your registered email address and the subject line "Account Deletion Request".
-      We will delete your Firestore data within 30 days. Residual data in backup systems may persist
-      for up to 90 days before being automatically purged.
+      To delete your account and all associated data, email us with your registered email address and the
+      subject line <strong>"Account Deletion Request"</strong>. We will delete your Firestore data within
+      <strong>30 days</strong>. Residual data in backup systems may persist for up to <strong>90 days</strong>
+      before automatic purge. Leaderboard entries that are within their active retention period may remain
+      visible until that period expires.
     </p>
 
-    <h2 id="en-security">12. Data Security</h2>
+    <h3>12.4 Exercising Your Rights</h3>
+    <p>
+      To exercise any of the rights listed above, contact us at the email address in Section 16.
+      We will respond within <strong>30 days</strong> (or 45 days for complex requests under GDPR).
+      We do not charge a fee for legitimate rights requests unless they are manifestly unfounded or excessive.
+    </p>
+
+    <h2 id="en-security">13. Data Security</h2>
     <p>We implement the following security measures to protect your information:</p>
     <ul>
-      <li><strong>Encryption in Transit:</strong> All data transmitted between the App and Firebase is encrypted using TLS (HTTPS).</li>
-      <li><strong>Encryption at Rest:</strong> Firebase/Google Cloud encrypts all stored data at rest by default using AES-256.</li>
+      <li><strong>Encryption in Transit:</strong> All data between the App and Firebase is encrypted using TLS 1.2+.</li>
+      <li><strong>Encryption at Rest:</strong> Google Cloud encrypts all Firestore data at rest using AES-256.</li>
       <li><strong>Authentication Security:</strong> Apple Sign-In uses a cryptographically secure nonce (SHA-256) to prevent replay attacks.</li>
-      <li><strong>Firebase Security Rules:</strong> Firestore database rules are configured to restrict access so users can only read/write their own data.</li>
+      <li><strong>Database Access Rules:</strong> Firestore security rules are configured to ensure users can only read and write their own data.</li>
       <li><strong>Username Moderation:</strong> An embedded profanity filter prevents offensive display names from being stored.</li>
+      <li><strong>No Plaintext Secrets:</strong> No credentials, API keys, or sensitive values are stored in client-side code in plain text.</li>
     </ul>
-    <p>While we take reasonable technical and organizational measures to protect your data, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
-    <p>In the event of a data breach that affects your rights and freedoms, we will notify the relevant supervisory authority within 72 hours and, if required, notify affected users without undue delay.</p>
+    <p>
+      While we implement reasonable and appropriate technical and organizational security measures,
+      <strong>no method of transmission over the Internet or electronic storage is 100% secure</strong>.
+      We cannot guarantee the absolute security of your information.
+    </p>
+    <p>
+      In the event of a personal data breach affecting your rights and freedoms, we will notify the relevant
+      supervisory authority within <strong>72 hours</strong> and, where legally required, notify affected users
+      without undue delay.
+    </p>
 
-    <h2 id="en-changes">13. Changes to This Privacy Policy</h2>
+    <h2 id="en-liability">14. Disclaimer &amp; Limitation of Liability</h2>
+    <div class="disclaimer-box">
+      <strong>Important:</strong> Please read this section carefully as it limits our liability to you.
+    </div>
+    <p>
+      The App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis,
+      without warranties of any kind, either express or implied, including but not limited to implied
+      warranties of merchantability, fitness for a particular purpose, or non-infringement.
+    </p>
+    <p>
+      To the maximum extent permitted by applicable law, the Developer shall not be liable for:
+    </p>
+    <ul>
+      <li>Any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the App.</li>
+      <li>Any loss of data, game progress, XP, streaks, or in-app content due to technical failures, device issues, or circumstances beyond our reasonable control.</li>
+      <li>Any interruption, suspension, or termination of the App or any of its features.</li>
+      <li>Any unauthorized access to or alteration of your data that results from circumstances beyond our reasonable control, including security breaches of third-party services (Firebase, RevenueCat, Apple).</li>
+      <li>The accuracy, reliability, or completeness of in-app educational content.</li>
+      <li>Any loss of subscription benefits due to App Store or RevenueCat processing errors beyond our control.</li>
+    </ul>
+    <p>
+      In any case, the Developer's total liability to you for any claims arising out of or relating to this
+      Privacy Policy or the App shall not exceed the amount you paid to us (if any) in the <strong>twelve (12) months</strong>
+      preceding the claim.
+    </p>
+    <p>
+      The Developer is not responsible for the data practices of third-party services (Firebase, Google,
+      Apple, RevenueCat). Your use of those services is governed by their respective privacy policies and
+      terms of service.
+    </p>
+    <p>
+      Some jurisdictions do not allow the exclusion of certain warranties or limitation of liability for
+      incidental or consequential damages, so the above limitations may not apply to you in full.
+    </p>
+
+    <h2 id="en-changes">15. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time to reflect changes in the App, applicable laws, or industry standards. When we make material changes, we will:</p>
     <ul>
       <li>Update the "Last Updated" date at the top of this policy.</li>
-      <li>Post the updated policy on our website / App Store page.</li>
+      <li>Post the updated policy at this URL and on our App Store page.</li>
       <li>Where feasible, provide in-app notification of significant changes.</li>
     </ul>
-    <p>Your continued use of the App after the updated policy takes effect constitutes your acceptance of the revised Privacy Policy. We encourage you to review this policy periodically.</p>
+    <p>
+      Your continued use of the App after the updated policy takes effect constitutes your acceptance of
+      the revised Privacy Policy. If you do not agree with any changes, you must stop using the App.
+      We encourage you to review this policy periodically.
+    </p>
 
-    <h2 id="en-contact">14. Contact Us</h2>
-    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+    <h2 id="en-contact">16. Contact Us</h2>
+    <p>If you have any questions, concerns, requests, or complaints regarding this Privacy Policy or our data practices, please contact us:</p>
     <ul>
-      <li><strong>Developer:</strong> Muhammed Talha Polat</li>
+      <li><strong>Developer / Data Controller:</strong> Muhammed Talha Polat</li>
       <li><strong>Email:</strong> <a href="mailto:m.talha.polat25@gmail.com">m.talha.polat25@gmail.com</a></li>
-      <li><strong>App Store Page:</strong> Learn English With Games on the Apple App Store</li>
+      <li><strong>App Store Page:</strong> Learn English With Games — Apple App Store</li>
     </ul>
-    <p>We aim to respond to all privacy-related inquiries within <strong>30 business days</strong>.</p>
+    <p>We aim to respond to all privacy-related inquiries within <strong>30 days</strong>. For urgent matters or data breach notifications, please include "URGENT" in your subject line.</p>
 
     <p class="footer">
       © 2026 Muhammed Talha Polat. All rights reserved.<br/>
-      This privacy policy was last reviewed on February 21, 2026.
+      This privacy policy was last reviewed and updated on February 21, 2026.
     </p>
 
   </div><!-- /lang-en -->
@@ -363,6 +548,7 @@
     <h1>Gizlilik Politikası</h1>
     <p class="subtitle">
       <strong>Uygulama:</strong> Learn English With Games &nbsp;|&nbsp;
+      <strong>Geliştirici:</strong> Muhammed Talha Polat &nbsp;|&nbsp;
       <strong>Geçerlilik Tarihi:</strong> 21 Şubat 2026 &nbsp;|&nbsp;
       <strong>Son Güncelleme:</strong> 21 Şubat 2026
     </p>
@@ -372,17 +558,19 @@
       <ol>
         <li><a href="#tr-overview">Genel Bakış</a></li>
         <li><a href="#tr-data-collected">Topladığımız Bilgiler</a></li>
+        <li><a href="#tr-lawful-basis">İşlemenin Hukuki Dayanağı (GDPR/KVKK)</a></li>
         <li><a href="#tr-how-used">Bilgilerinizi Nasıl Kullanıyoruz</a></li>
-        <li><a href="#tr-third-parties">Üçüncü Taraf Hizmetler</a></li>
+        <li><a href="#tr-third-parties">Üçüncü Taraf Hizmetler ve Veri İşleyenler</a></li>
         <li><a href="#tr-data-sharing">Veri Paylaşımı</a></li>
         <li><a href="#tr-data-storage">Veri Depolama ve Saklama</a></li>
         <li><a href="#tr-guest-mode">Misafir Modu</a></li>
         <li><a href="#tr-purchases">Uygulama İçi Satın Alma ve Abonelikler</a></li>
         <li><a href="#tr-permissions">Cihaz İzinleri</a></li>
         <li><a href="#tr-children">Çocukların Gizliliği (COPPA)</a></li>
-        <li><a href="#tr-gdpr">Haklarınız (GDPR / KVKK)</a></li>
+        <li><a href="#tr-rights">Haklarınız (GDPR / KVKK / CCPA)</a></li>
         <li><a href="#tr-security">Veri Güvenliği</a></li>
-        <li><a href="#tr-changes">Bu Politikadaki Değişiklikler</a></li>
+        <li><a href="#tr-liability">Sorumluluk Reddi ve Sorumluluğun Sınırlandırılması</a></li>
+        <li><a href="#tr-changes">Politikadaki Değişiklikler</a></li>
         <li><a href="#tr-contact">İletişim</a></li>
       </ol>
     </div>
@@ -390,12 +578,19 @@
     <h2 id="tr-overview">1. Genel Bakış</h2>
     <p>
       <strong>Learn English With Games</strong> ("Uygulama", "biz", "bizim"), <strong>Muhammed Talha Polat</strong>
-      ("Geliştirici") tarafından geliştirilmiş bir iOS eğitim uygulamasıdır. Bu Gizlilik Politikası,
-      uygulamamızın kullanıcılardan ("siz") nasıl bilgi topladığını, bu bilgileri nasıl kullandığını,
-      sakladığını ve koruduğunu açıklamaktadır.
+      ("Geliştirici", "veri sorumlusu") tarafından geliştirilen ve işletilen bir iOS eğitim uygulamasıdır.
+      Bu Gizlilik Politikası, Apple App Store'da sunulan iOS uygulamamızın kullanıcılardan ("siz") nasıl bilgi
+      topladığını, bu bilgileri nasıl kullandığını, sakladığını ve koruduğunu açıklamaktadır.
     </p>
-    <p>Uygulamayı indirerek, yükleyerek veya kullanarak bu politikayı kabul etmiş sayılırsınız. Kabul etmiyorsanız lütfen Uygulamayı kullanmayınız.</p>
-    <p>Gizliliğinizi korumaya kararlıyız. Yalnızca Uygulamanın özelliklerini sunmak için gerekli verileri topluyor ve kişisel bilgilerinizi üçüncü taraflara satmıyoruz.</p>
+    <p>
+      Uygulamayı indirerek, yükleyerek veya kullanarak bu politikayı okuduğunuzu, anladığınızı ve burada
+      açıklanan uygulamaları kabul ettiğinizi beyan etmiş olursunuz. Kabul etmiyorsanız lütfen Uygulamayı
+      kullanmayınız.
+    </p>
+    <p>
+      Gizliliğinizi korumaya kararlıyız. Yalnızca Uygulamanın temel özelliklerini sunmak için gereken
+      asgari verileri topluyor ve kişisel bilgilerinizi üçüncü taraflara <strong>satmıyoruz</strong>.
+    </p>
 
     <h2 id="tr-data-collected">2. Topladığımız Bilgiler</h2>
 
@@ -403,34 +598,72 @@
     <ul>
       <li><strong>Kullanıcı Adı / Görünen Ad:</strong> Profiliniz ve lider tabloları için seçtiğiniz takma ad.</li>
       <li><strong>E-posta Adresi:</strong> Google veya Apple ID ile giriş yaptığınızda alınır.</li>
-      <li><strong>Avatar Seçimi:</strong> Uygulama içinden seçtiğiniz avatar (0–11 arası).</li>
-      <li><strong>Ülke / Bayrak:</strong> 35'ten fazla ülke arasından seçtiğiniz ülke bayrağı.</li>
-      <li><strong>Dil Tercihi:</strong> Seçtiğiniz hedef dil ve arayüz dili.</li>
+      <li><strong>Avatar Seçimi:</strong> Uygulama içi avatar seçiciden seçtiğiniz avatar (0–11 arası).</li>
+      <li><strong>Ülke / Bayrak:</strong> Mevcut ülkeler listesinden seçtiğiniz ülke bayrağı.</li>
+      <li><strong>Dil Tercihi:</strong> Hedef dil ve arayüz dili seçiminiz.</li>
     </ul>
 
     <h3>2.2 Otomatik Toplanan Bilgiler</h3>
     <ul>
-      <li><strong>Kullanıcı ID (UID):</strong> Firebase Authentication tarafından oluşturulan anonim kimlik.</li>
+      <li><strong>Kullanıcı ID (UID):</strong> Firebase Authentication tarafından oluşturulan benzersiz, anonimleştirilmiş kimlik.</li>
       <li><strong>Oyun Skorları ve Performans:</strong> Her oyun türü için en iyi skorlar, doğru/yanlış sayısı, kazanılan XP ve oynanan oyun sayısı.</li>
-      <li><strong>Oyun Aktivitesi:</strong> Günlük oyun sayısı, günlük XP, seri günleri ve son oynama tarihi.</li>
-      <li><strong>Lider Tablosu Girişleri:</strong> Skor ve UID'niz global günlük, haftalık, aylık ve tüm zamanlık lider tablolarına gönderilir.</li>
-      <li><strong>Premium Durumu:</strong> Aktif premium aboneliğinizin olup olmadığı.</li>
-      <li><strong>Profil Tamamlama Durumu:</strong> Profil kurulumunu tamamlayıp tamamlamadığınızı belirten bir değer.</li>
+      <li><strong>Oyun Aktivitesi:</strong> Günlük oyun sayısı, günlük XP, seri gün sayısı ve son oynama tarihi.</li>
+      <li><strong>Lider Tablosu Girişleri:</strong> Skor ve UID'niz global lider tablolarına (günlük, haftalık, aylık, tüm zamanlar) iletilir.</li>
+      <li><strong>Premium Durumu:</strong> Aktif premium aboneliğinizin olup olmadığını belirten bir değer.</li>
+      <li><strong>Profil Tamamlama Durumu:</strong> Profil kurulumunun tamamlanıp tamamlanmadığını belirten bir değer.</li>
     </ul>
 
     <h3>2.3 Toplamadığımız Bilgiler</h3>
     <ul>
-      <li>Konum verisi (GPS veya başka türlü)</li>
+      <li>GPS veya hassas konum verisi</li>
       <li>Kamera veya mikrofon verisi</li>
       <li>Kişiler / adres defteri</li>
       <li>Fotoğraflar veya medya dosyaları</li>
-      <li>Tarayıcı geçmişi veya uygulama izleme verisi</li>
+      <li>Tarayıcı geçmişi veya uygulamalar arası izleme verisi</li>
       <li>Sağlık veya biyometrik veri</li>
       <li>Reklam tanımlayıcıları (IDFA)</li>
+      <li>Ödeme kartı numarası, banka hesabı veya fatura bilgileri</li>
     </ul>
 
-    <h2 id="tr-how-used">3. Bilgilerinizi Nasıl Kullanıyoruz</h2>
-    <p>Toplanan bilgileri yalnızca şunlar için kullanıyoruz:</p>
+    <h2 id="tr-lawful-basis">3. İşlemenin Hukuki Dayanağı (GDPR / KVKK)</h2>
+    <p>
+      Avrupa Ekonomik Alanı'nda (AEA) ve Birleşik Krallık'ta bulunan kullanıcılar için, GDPR'ın 6. Maddesi
+      kapsamında aşağıdaki hukuki dayanakları esas alıyoruz. Türkiye'deki kullanıcılar için 6698 sayılı
+      Kişisel Verilerin Korunması Kanunu (KVKK) kapsamındaki yasal dayanaklara da uyulmaktadır:
+    </p>
+    <table>
+      <tr>
+        <th>İşleme Faaliyeti</th>
+        <th>Hukuki Dayanak</th>
+      </tr>
+      <tr>
+        <td>Hesap oluşturma, kimlik doğrulama, profil yönetimi</td>
+        <td>Madde 6(1)(b) – Sözleşmenin ifası</td>
+      </tr>
+      <tr>
+        <td>Oyun skoru takibi, lider tabloları, XP, seriler</td>
+        <td>Madde 6(1)(b) – Sözleşmenin ifası</td>
+      </tr>
+      <tr>
+        <td>Abonelik doğrulama ve yönetimi</td>
+        <td>Madde 6(1)(b) – Sözleşmenin ifası</td>
+      </tr>
+      <tr>
+        <td>Güvenlik önlemleri, sahtekarlık önleme, küfür filtresi</td>
+        <td>Madde 6(1)(f) – Meşru menfaat</td>
+      </tr>
+      <tr>
+        <td>Anonimleştirilmiş veri ile uygulama iyileştirme</td>
+        <td>Madde 6(1)(f) – Meşru menfaat</td>
+      </tr>
+      <tr>
+        <td>Yasal uyumluluk (yetkili makamlara bildirim)</td>
+        <td>Madde 6(1)(c) – Yasal yükümlülük</td>
+      </tr>
+    </table>
+
+    <h2 id="tr-how-used">4. Bilgilerinizi Nasıl Kullanıyoruz</h2>
+    <p>Toplanan bilgileri <strong>yalnızca</strong> şunlar için kullanıyoruz:</p>
     <ul>
       <li>Kullanıcı hesabı ve profili oluşturmak ve yönetmek.</li>
       <li>Google veya Apple Sign-In ile güvenli kimlik doğrulaması yapmak.</li>
@@ -438,100 +671,141 @@
       <li>Global lider tablolarını doldurmak ve görüntülemek.</li>
       <li>Hesap katmanınıza (Misafir, Ücretsiz, Premium) göre günlük oyun limitlerini uygulamak.</li>
       <li>Abonelik durumunuzu yönetmek ve doğrulamak.</li>
-      <li>Kullanıcı adlarını küfür filtresiyle denetlemek.</li>
-      <li>Uygulama işlevselliğini iyileştirmek ve hataları düzeltmek (yalnızca anonimleştirilmiş veri kullanılarak).</li>
+      <li>Kullanıcı adlarını yerleşik küfür filtresiyle denetlemek.</li>
+      <li>Uygulama işlevselliğini iyileştirmek ve hataları düzeltmek (yalnızca anonimleştirilmiş toplu veri kullanılarak).</li>
     </ul>
     <p>Verilerinizi şunlar için <strong>kullanmıyoruz</strong>:</p>
     <ul>
       <li>Hedefli veya davranışsal reklamcılık</li>
-      <li>Üçüncü taraflara veri satma veya kiralama</li>
-      <li>Hukuki sonuçlar doğuran otomatik karar alma</li>
+      <li>Üçüncü taraflara veri satma, kiralama veya lisanslama</li>
+      <li>Hukuki veya benzer önemli sonuçlar doğuran otomatik karar alma</li>
+      <li>Pazarlama amaçlı profil oluşturma</li>
       <li>Uygulamanın temel özelliklerinin sunulmasının ötesinde herhangi bir amaç</li>
     </ul>
 
-    <h2 id="tr-third-parties">4. Üçüncü Taraf Hizmetler</h2>
-    <p>Uygulama aşağıdaki üçüncü taraf hizmetleri entegre etmektedir. Her birinin verilerinizi nasıl işlediğini düzenleyen kendi gizlilik politikası bulunmaktadır:</p>
-
+    <h2 id="tr-third-parties">5. Üçüncü Taraf Hizmetler ve Veri İşleyenler</h2>
+    <p>
+      Uygulama aşağıdaki üçüncü taraf hizmetleri entegre etmektedir. Her işleyiciyle Veri İşleme Anlaşması
+      (DPA) imzalanmış veya buna dayanılmaktadır. Her birinin verilerinizi nasıl işlediğini düzenleyen kendi
+      gizlilik politikası bulunmaktadır:
+    </p>
     <table>
       <tr>
         <th>Hizmet</th>
         <th>Amaç</th>
+        <th>Rolü</th>
         <th>Gizlilik Politikası</th>
       </tr>
       <tr>
-        <td>Firebase Authentication (Google)</td>
-        <td>Kullanıcı girişi ve kimlik doğrulama</td>
+        <td>Firebase Authentication (Google LLC)</td>
+        <td>Kullanıcı girişi ve kimlik yönetimi</td>
+        <td>İşleyen</td>
         <td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com →</a></td>
       </tr>
       <tr>
-        <td>Cloud Firestore (Google)</td>
+        <td>Cloud Firestore (Google LLC)</td>
         <td>Kullanıcı verileri ve skor veritabanı</td>
+        <td>İşleyen</td>
         <td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com →</a></td>
       </tr>
       <tr>
-        <td>Google Sign-In (Google)</td>
-        <td>OAuth tabanlı giriş</td>
+        <td>Google Sign-In (Google LLC)</td>
+        <td>OAuth 2.0 tabanlı kimlik doğrulama</td>
+        <td>İşleyen</td>
         <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com →</a></td>
       </tr>
       <tr>
-        <td>Sign in with Apple (Apple)</td>
-        <td>OAuth tabanlı giriş</td>
+        <td>Sign in with Apple (Apple Inc.)</td>
+        <td>OAuth tabanlı kimlik doğrulama</td>
+        <td>İşleyen</td>
         <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy →</a></td>
       </tr>
       <tr>
-        <td>RevenueCat</td>
+        <td>RevenueCat, Inc.</td>
         <td>Abonelik yönetimi</td>
+        <td>İşleyen</td>
         <td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy →</a></td>
       </tr>
     </table>
 
     <p>
-      Firebase'de saklanan veriler, Google Cloud sunucularında (öncelikle ABD'de) bulunmaktadır.
-      Firebase, GDPR'a uymakta ve veri aktarımları için Standart Sözleşme Maddeleri'ni korumaktadır.
+      Firebase'de saklanan veriler, Google Cloud sunucularında (öncelikle ABD'de) bulunmaktadır. Google,
+      AB veri aktarımları için Standart Sözleşme Maddeleri'ni (SCC) uygulamakta ve AB-ABD Veri Gizliliği
+      Çerçevesi'ne katılmaktadır. Firebase; ISO 27001, SOC 1, SOC 2 ve SOC 3 sertifikalarına sahiptir.
     </p>
     <p>
-      RevenueCat; abonelik haklarını doğrulamak amacıyla yalnızca Apple satın alma makbuzunuzu ve
-      Firebase UID'nizi alır. Tam adınızı, e-posta adresinizi veya ödeme kartı bilgilerinizi almaz;
-      bunlar Apple'da kalır.
+      RevenueCat; abonelik haklarını doğrulamak amacıyla yalnızca Apple satın alma makbuzunuzu ve Firebase
+      UID'nizi alır. Tam adınızı, e-posta adresinizi veya ödeme kartı bilgilerinizi almaz; bunlar yalnızca
+      Apple'da kalır. İşleme, GDPR Madde 6(1)(b) (sözleşmenin ifası) kapsamında gerçekleştirilmektedir.
+      RevenueCat'in GDPR uyumluluk belgelerine
+      <a href="https://www.revenuecat.com/gdpr/" target="_blank">revenuecat.com/gdpr</a> adresinden ulaşabilirsiniz.
     </p>
 
-    <h2 id="tr-data-sharing">5. Veri Paylaşımı</h2>
-    <p>Bilgilerinizi yalnızca aşağıdaki sınırlı durumlarda paylaşırız:</p>
+    <h2 id="tr-data-sharing">6. Veri Paylaşımı</h2>
+    <p>Bilgilerinizi yalnızca aşağıdaki kesinlikle sınırlı durumlarda paylaşırız:</p>
     <ul>
-      <li><strong>Hizmet Sağlayıcılar:</strong> Firebase (Google) ve RevenueCat — yalnızca Uygulamayı çalıştırmak için.</li>
-      <li><strong>Lider Tablosu Görüntüleme:</strong> Görünen adınız ve skorunuz diğer kullanıcılara görünür. E-posta adresiniz ve UID'niz asla herkese açık gösterilmez.</li>
-      <li><strong>Yasal Uyumluluk:</strong> Yürürlükteki yasa, mahkeme kararı veya hükümet otoritesinin gerektirdiği durumlarda verileri ifşa edebiliriz.</li>
-      <li><strong>İş Transferleri:</strong> Birleşme, satın alma veya varlık satışı durumunda kullanıcı verileri, bu Gizlilik Politikasına tabi olmak kaydıyla halef kuruluşa aktarılabilir.</li>
+      <li><strong>Hizmet Sağlayıcılar (Veri İşleyenler):</strong> Firebase (Google) ve RevenueCat — yalnızca Bölüm 5'te açıklandığı şekilde Uygulamayı işletmek için. Bu işleyenler, verilerinizi kendi amaçları için kullanmaktan sözleşmeyle yasaklanmıştır.</li>
+      <li><strong>Lider Tablosu Görüntüleme:</strong> Görünen adınız ve skorunuz diğer uygulama kullanıcılarına görünür. E-posta adresiniz ve UID'niz hiçbir zaman kamuya açık gösterilmez.</li>
+      <li><strong>Yasal Uyumluluk:</strong> Yürürlükteki yasa, mahkeme kararı, düzenleyici yükümlülük veya yasal hükümet otoritesinin gerektirdiği durumlarda verileri ifşa edebiliriz. Yasal olarak mümkün olduğunda sizi önceden bilgilendiririz.</li>
+      <li><strong>İş Transferleri:</strong> Birleşme, satın alma veya varlıkların önemli bir kısmının satışı durumunda, kullanıcı verileri bu Gizlilik Politikası'ndakine en az eşdeğer korumalar altında halef kuruluşa aktarılabilir.</li>
     </ul>
-    <p>Kişisel verilerinizi hiçbir zaman üçüncü taraflara, reklamcılara veya veri komisyoncularına <strong>satmıyoruz</strong>.</p>
+    <p>Kişisel verilerinizi hiçbir zaman üçüncü taraflara, reklamcılara, veri komisyoncularına veya analitik şirketlere <strong>satmıyor, kiralıyor, takas etmiyor veya lisanslamıyoruz</strong>.</p>
 
-    <h2 id="tr-data-storage">6. Veri Depolama ve Saklama</h2>
+    <h2 id="tr-data-storage">7. Veri Depolama ve Saklama</h2>
 
-    <h3>6.1 Bulut Depolama (Kimlik Doğrulamalı Kullanıcılar)</h3>
-    <p>Hesap verileriniz Firebase Cloud Firestore'da saklanır. Aktif bir hesabınız olduğu sürece veriler korunur. Firestore verileri Google tarafından hem iletimde hem de depoda şifrelenir.</p>
+    <h3>7.1 Bulut Depolama (Kimlik Doğrulamalı Kullanıcılar)</h3>
+    <p>Hesap verileriniz Firebase Cloud Firestore'da saklanır. Aktif bir hesabınız olduğu sürece veriler korunur. Firestore verileri Google tarafından hem depoda (AES-256) hem de iletimde (TLS) şifrelenir.</p>
 
-    <h3>6.2 Yerel Depolama (Cihaz Üzerinde)</h3>
-    <p>Uygulama, aşağıdaki verileri iOS UserDefaults kullanarak cihazınızda yerel olarak saklar:</p>
+    <h3>7.2 Yerel Depolama (Cihaz Üzerinde)</h3>
+    <p>Uygulama, iOS UserDefaults kullanarak aşağıdaki verileri cihazınızda yerel olarak saklar:</p>
     <ul>
       <li>Dil tercihleri</li>
       <li>Profil kurulum durumu (performans için önbellek)</li>
       <li>En iyi skorlar (yerel önbellek)</li>
       <li>Premium durum önbelleği</li>
       <li>Günlük oyun sayısı takibi</li>
-      <li>Misafir modu istatistikleri (giriş yapılmadığında)</li>
+      <li>Misafir modu istatistikleri</li>
     </ul>
-    <p>Yerel veriler yalnızca cihazınızda saklanır ve Uygulamayı kaldırdığınızda silinir.</p>
+    <p>Yerel veriler yalnızca cihazınızda saklanır ve Uygulamayı kaldırdığınızda silinir. Bu verilere erişimimiz yoktur.</p>
 
-    <h3>6.3 Saklama Süresi</h3>
-    <p>
-      Kimlik doğrulamalı kullanıcı verileri, hesap silme talebinde bulunana kadar (bkz. Bölüm 11)
-      Firestore'da saklanır. Misafir kullanıcı verileri yalnızca cihazda bulunur ve Uygulama
-      kaldırıldıktan sonra korunmaz. Lider tablosu girişleri ilgili dönem için saklanır (günlük:
-      24 saat, haftalık: 7 gün, aylık: takvim ayı, tüm zamanlar: süresiz).
-    </p>
+    <h3>7.3 Saklama Süreleri</h3>
+    <table>
+      <tr>
+        <th>Veri Türü</th>
+        <th>Saklama Süresi</th>
+      </tr>
+      <tr>
+        <td>Hesap verileri (profil, skor, XP)</td>
+        <td>Hesap silme talebine veya 3 yıl hareketsizliğe kadar</td>
+      </tr>
+      <tr>
+        <td>Lider tablosu — günlük girişler</td>
+        <td>24 saat</td>
+      </tr>
+      <tr>
+        <td>Lider tablosu — haftalık girişler</td>
+        <td>7 gün</td>
+      </tr>
+      <tr>
+        <td>Lider tablosu — aylık girişler</td>
+        <td>Takvim ayı</td>
+      </tr>
+      <tr>
+        <td>Lider tablosu — tüm zamanlar</td>
+        <td>Süresiz (veya hesap silme işlemine kadar)</td>
+      </tr>
+      <tr>
+        <td>Silme sonrası yedek/artık veriler</td>
+        <td>Otomatik temizleme öncesi en fazla 90 gün</td>
+      </tr>
+      <tr>
+        <td>Misafir kullanıcı verileri (yalnızca cihazda)</td>
+        <td>Uygulama kaldırılana kadar</td>
+      </tr>
+    </table>
 
-    <h2 id="tr-guest-mode">7. Misafir Modu</h2>
-    <p>Hesap oluşturmadan uygulamayı misafir olarak kullanabilirsiniz. Misafir Modunda:</p>
+    <h2 id="tr-guest-mode">8. Misafir Modu</h2>
+    <p>Hesap oluşturmadan Uygulamayı misafir olarak kullanabilirsiniz. Misafir Modunda:</p>
     <ul>
       <li>Sunucularımıza hiçbir kişisel bilgi toplanmaz veya iletilmez.</li>
       <li>Oyun istatistikleriniz (XP, seri, en iyi skorlar, oyun sayısı) yalnızca cihazınızda saklanır.</li>
@@ -540,97 +814,188 @@
       <li>İstediğiniz zaman tam hesaba geçebilirsiniz; misafir verileri otomatik olarak aktarılmaz.</li>
     </ul>
 
-    <h2 id="tr-purchases">8. Uygulama İçi Satın Alma ve Abonelikler</h2>
+    <h2 id="tr-purchases">9. Uygulama İçi Satın Alma ve Abonelikler</h2>
     <p>
-      Uygulama, sınırsız günlük oyun kilidini açan isteğe bağlı premium abonelikler (aylık ve yıllık) sunmaktadır.
-      Tüm satın almalar <strong>Apple App Store</strong> ödeme sistemi üzerinden işlenir.
-      Ödeme kartı bilgilerinizi, fatura adresinizi veya finansal hesap bilgilerinizi doğrudan toplamıyor veya saklamıyoruz.
+      Uygulama, sınırsız günlük oyun ve ek özelliklerin kilidini açan isteğe bağlı premium abonelikler
+      (aylık ve yıllık) sunmaktadır. Tüm satın almalar yalnızca <strong>Apple App Store</strong> ödeme
+      altyapısı üzerinden işlenir. Ödeme kartı bilgilerinizi, fatura adresinizi veya finansal hesap
+      bilgilerinizi doğrudan toplamıyor, saklamıyor veya işlemiyoruz.
     </p>
     <p>RevenueCat, abonelik haklarını doğrulamak amacıyla yalnızca Apple satın alma makbuzlarını ve Firebase UID'nizi alır. Premium durumunuz (boolean) Firestore profilinizle senkronize edilir.</p>
-    <p>İade talepleri veya abonelik yönetimi için lütfen Apple ID hesap ayarlarınızı kullanın veya doğrudan Apple Destek ile iletişime geçin.</p>
+    <p>
+      <strong>İade ve İptal:</strong> Abonelik yönetimi (iptal ve iade dahil) Apple ID hesap ayarlarınız
+      veya Apple Destek üzerinden yapılmalıdır. İadeleri doğrudan işleme kapasitemiz bulunmamaktadır.
+    </p>
+    <p>
+      <strong>Otomatik Yenileme Bildirimi:</strong> Abonelikler, mevcut faturalama döneminin bitiminden
+      en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenir. Apple ID hesabınız, mevcut
+      dönemin bitimine 24 saat kala yenileme ücreti tahsil edilir.
+    </p>
 
-    <h2 id="tr-permissions">9. Cihaz İzinleri</h2>
+    <h2 id="tr-permissions">10. Cihaz İzinleri</h2>
     <p>Uygulama, aşağıdakiler dahil <strong>hiçbir hassas cihaz izni talep etmez</strong>:</p>
     <ul>
       <li>Kamera</li>
       <li>Mikrofon</li>
-      <li>Konum Hizmetleri</li>
+      <li>Konum Hizmetleri (GPS)</li>
       <li>Kişiler / Adres Defteri</li>
       <li>Fotoğraflar / Medya Kütüphanesi</li>
       <li>Sağlık Verisi</li>
       <li>Bluetooth</li>
-      <li>Anlık Bildirimler (isteğe bağlı – bu değişirse bildirim alırsınız)</li>
     </ul>
-    <p>Uygulamada kayıtlı tek URL şeması, OAuth kimlik doğrulamasının ardından Google Sign-In'den geri yönlendirme için kullanılır; bu standart OAuth davranışıdır.</p>
+    <p>Uygulamada kayıtlı tek URL şeması, OAuth kimlik doğrulamasının ardından Google Sign-In'den geri yönlendirme için kullanılır; bu standart OAuth 2.0 davranışıdır ve başka uygulama ya da hizmete erişim sağlamaz.</p>
 
-    <h2 id="tr-children">10. Çocukların Gizliliği (COPPA)</h2>
+    <h2 id="tr-children">11. Çocukların Gizliliği (COPPA)</h2>
     <p>
-      Uygulama, bir İngilizce öğrenme oyunu olarak tasarlanmıştır ve her yaştan kullanıcıya uygun olabilir.
-      Ancak Uygulama, Amerika Birleşik Devletleri'nde 13 yaş altı çocuklara (COPPA kapsamında) veya
-      Avrupa Birliği'nde 16 yaş altı çocuklara (GDPR kapsamında) yönelik değildir.
+      Uygulama, bir İngilizce öğrenme oyunu olarak her yaştan kullanıcıya uygun olabilir. Ancak Uygulama,
+      Amerika Birleşik Devletleri'nde <strong>13 yaş altı</strong> çocuklara (COPPA kapsamında) veya
+      Avrupa Birliği'nde <strong>16 yaş altı</strong> çocuklara (GDPR-K kapsamında) yönelik değildir.
     </p>
     <p>
       13 yaş altı çocuklardan doğrulanabilir ebeveyn onayı olmaksızın bilerek kişisel bilgi toplamıyoruz.
-      13 yaş altı çocuğunuzun izinsiz kişisel bilgi sağladığını düşünüyorsanız lütfen Bölüm 14'teki
-      e-posta adresiyle derhal iletişime geçin; bilgileri hemen sileceğiz.
+      13 yaş altı çocuğunuzun izinsiz kişisel bilgi sağladığını düşünüyorsanız lütfen Bölüm 16'daki adresle
+      derhal iletişime geçin; söz konusu bilgileri sistemlerimizden hemen sileceğiz.
     </p>
-    <p>13 yaş altı bir çocuğun Uygulamayı kullanmasına izin vermek istiyorsanız hesap oluşturma veya kişisel bilgi toplama gerektirmeyen <strong>Misafir Modu</strong>'nu öneririz.</p>
+    <p>
+      13 yaş altı çocuklar için hesap oluşturma veya kişisel bilgi toplamayı gerektirmeyen
+      <strong>Misafir Modu</strong>'nu öneririz.
+    </p>
 
-    <h2 id="tr-gdpr">11. Haklarınız (GDPR / KVKK ve Benzer Yasalar)</h2>
-    <p>Bulunduğunuz yargı bölgesine bağlı olarak kişisel verilerinizle ilgili şu haklara sahip olabilirsiniz:</p>
+    <h2 id="tr-rights">12. Haklarınız (GDPR / KVKK / CCPA ve Benzer Yasalar)</h2>
+
+    <h3>12.1 GDPR Kapsamındaki Haklarınız (AEA / Birleşik Krallık Kullanıcıları)</h3>
     <ul>
-      <li><strong>Erişim Hakkı:</strong> Hakkınızda tuttuğumuz kişisel verilerin bir kopyasını talep edebilirsiniz.</li>
-      <li><strong>Düzeltme Hakkı:</strong> Uygulama içi profil ayarlarından yanlış veya eksik verileri istediğiniz zaman düzeltebilirsiniz.</li>
-      <li><strong>Silme Hakkı ("Unutulma Hakkı"):</strong> Hesabınızın ve tüm ilgili kişisel verilerinizin silinmesini talep edebilirsiniz.</li>
-      <li><strong>Veri Taşınabilirliği Hakkı:</strong> Makine okunabilir formatta verilerinizin bir kopyasını isteyebilirsiniz.</li>
-      <li><strong>İşlemeyi Kısıtlama Hakkı:</strong> Belirli durumlarda verilerinizi nasıl işlediğimizi sınırlamamızı talep edebilirsiniz.</li>
-      <li><strong>İtiraz Hakkı:</strong> Meşru menfaatlere dayalı işlemeye itiraz edebilirsiniz.</li>
-      <li><strong>Rızayı Geri Çekme Hakkı:</strong> İşlemenin rızaya dayandığı durumlarda, önceki işlemeyi etkilemeksizin rızanızı istediğiniz zaman geri çekebilirsiniz.</li>
+      <li><strong>Erişim Hakkı (Madde 15):</strong> Hakkınızda tuttuğumuz kişisel verilerin bir kopyasını talep edebilirsiniz.</li>
+      <li><strong>Düzeltme Hakkı (Madde 16):</strong> Uygulama içi profil ayarlarından yanlış veya eksik verileri istediğiniz zaman düzeltebilirsiniz.</li>
+      <li><strong>Silme Hakkı — "Unutulma Hakkı" (Madde 17):</strong> Hesabınızın ve tüm ilgili kişisel verilerinizin silinmesini talep edebilirsiniz.</li>
+      <li><strong>Veri Taşınabilirliği Hakkı (Madde 20):</strong> Verilerinizi yapılandırılmış, yaygın olarak kullanılan, makine tarafından okunabilir bir biçimde talep edebilirsiniz.</li>
+      <li><strong>İşlemeyi Kısıtlama Hakkı (Madde 18):</strong> Belirli durumlarda verilerinizin nasıl işlendiğini kısıtlamamızı talep edebilirsiniz.</li>
+      <li><strong>İtiraz Hakkı (Madde 21):</strong> Meşru menfaatlere dayalı işlemeye itiraz edebilirsiniz.</li>
+      <li><strong>Rızayı Geri Çekme Hakkı (Madde 7(3)):</strong> İşlemenin rızaya dayandığı durumlarda, önceki işlemeyi etkilemeksizin rızanızı geri çekebilirsiniz.</li>
+      <li><strong>Denetim Otoritesine Şikayet Hakkı (Madde 77):</strong> Verilerinizin hukuka aykırı işlendiğini düşünüyorsanız, üye devletinizdeki veya Birleşik Krallık'taki (ICO) veri koruma denetim otoritesine şikayette bulunabilirsiniz.</li>
     </ul>
+
+    <h3>12.2 KVKK Kapsamındaki Haklarınız (Türkiye'deki Kullanıcılar)</h3>
+    <p>6698 sayılı KVKK'nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
+    <ul>
+      <li>Kişisel veri işlenip işlenmediğini öğrenme,</li>
+      <li>Kişisel veriler işlenmişse buna ilişkin bilgi talep etme,</li>
+      <li>Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+      <li>Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,</li>
+      <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,</li>
+      <li>Kişisel verilerin silinmesini veya yok edilmesini isteme,</li>
+      <li>Yapılan işlemlerin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+      <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,</li>
+      <li>Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme.</li>
+    </ul>
+
+    <h3>12.3 CCPA Kapsamındaki Haklarınız (Kaliforniya'daki Kullanıcılar)</h3>
+    <ul>
+      <li>Hangi kişisel bilgilerin toplandığını ve nasıl kullanıldığını öğrenme hakkı.</li>
+      <li>Kişisel bilgilerin silinmesini talep etme hakkı (belirli istisnalara tabi olarak).</li>
+      <li>Kişisel bilgilerin satışına itiraz etme hakkı (kişisel bilgileri <strong>satmıyoruz</strong>).</li>
+      <li>Haklarınızı kullanmak nedeniyle ayrımcılığa uğramamak hakkı.</li>
+    </ul>
+
+    <h3>12.4 Hesap ve Veri Silme</h3>
     <p>
-      Bu haklardan herhangi birini kullanmak için lütfen Bölüm 14'teki e-posta adresiyle iletişime geçin.
-      30 gün içinde (karmaşık talepler için 45 gün) yanıt veririz. Haklarınızı kullanmak için ücret talep etmiyoruz.
-    </p>
-    <p>
-      <strong>Hesap ve Veri Silme:</strong> Hesabınızı ve tüm ilgili verileri silmek için kayıtlı e-posta
-      adresinizle bize "Hesap Silme Talebi" konusuyla e-posta gönderin. Firestore verilerinizi 30 gün
-      içinde sileceğiz. Yedek sistemlerdeki artık veriler, otomatik olarak temizlenmeden önce 90 güne
-      kadar devam edebilir.
+      Hesabınızı ve tüm ilgili verileri silmek için kayıtlı e-posta adresinizle <strong>"Hesap Silme Talebi"</strong>
+      konusuyla bize e-posta gönderin. Firestore verilerinizi <strong>30 gün</strong> içinde sileceğiz.
+      Yedek sistemlerdeki artık veriler, otomatik olarak temizlenmeden önce <strong>90 güne</strong> kadar
+      devam edebilir. Aktif saklama dönemindeki lider tablosu girişleri, ilgili dönem sona erene kadar
+      görünür kalabilir.
     </p>
 
-    <h2 id="tr-security">12. Veri Güvenliği</h2>
+    <h3>12.5 Haklarınızı Kullanma</h3>
+    <p>
+      Yukarıda listelenen haklardan herhangi birini kullanmak için Bölüm 16'daki e-posta adresiyle iletişime
+      geçin. GDPR kapsamında <strong>30 gün</strong> (karmaşık talepler için 45 gün) içinde yanıt veririz.
+      Meşru ve orantılı haklarınızı kullanmak için ücret talep etmeyiz.
+    </p>
+
+    <h2 id="tr-security">13. Veri Güvenliği</h2>
     <p>Bilgilerinizi korumak için aşağıdaki güvenlik önlemlerini uyguluyoruz:</p>
     <ul>
-      <li><strong>İletimde Şifreleme:</strong> Uygulama ile Firebase arasında iletilen tüm veriler TLS (HTTPS) kullanılarak şifrelenir.</li>
-      <li><strong>Depoda Şifreleme:</strong> Firebase/Google Cloud, depolanan tüm verileri varsayılan olarak AES-256 ile şifreler.</li>
+      <li><strong>İletimde Şifreleme:</strong> Uygulama ile Firebase arasındaki tüm veriler TLS 1.2+ ile şifrelenir.</li>
+      <li><strong>Depoda Şifreleme:</strong> Google Cloud, tüm Firestore verilerini varsayılan olarak AES-256 ile şifreler.</li>
       <li><strong>Kimlik Doğrulama Güvenliği:</strong> Apple Sign-In, tekrar saldırılarını önlemek için kriptografik olarak güvenli bir nonce (SHA-256) kullanır.</li>
-      <li><strong>Firebase Güvenlik Kuralları:</strong> Firestore veritabanı kuralları, kullanıcıların yalnızca kendi verilerini okuyup yazabilmesi için kısıtlanmıştır.</li>
+      <li><strong>Veritabanı Erişim Kuralları:</strong> Firestore güvenlik kuralları, kullanıcıların yalnızca kendi verilerini okuyup yazabilmesini sağlayacak şekilde yapılandırılmıştır.</li>
       <li><strong>Kullanıcı Adı Denetimi:</strong> Yerleşik küfür filtresi, saldırgan görünen adların saklanmasını engeller.</li>
+      <li><strong>Düz Metin Sır Yok:</strong> İstemci tarafı kodda hiçbir kimlik bilgisi, API anahtarı veya hassas değer düz metin olarak saklanmamaktadır.</li>
     </ul>
-    <p>Makul teknik ve organizasyonel önlemler alsak da internet üzerinden veri iletiminin veya elektronik depolamanın %100 güvenli olduğu garanti edilemez.</p>
-    <p>Haklarınızı ve özgürlüklerinizi etkileyen bir veri ihlali durumunda ilgili denetim otoritesini 72 saat içinde bildirir ve gerekirse etkilenen kullanıcıları gecikmeksizin bilgilendiririz.</p>
+    <p>
+      Makul ve uygun teknik ve organizasyonel güvenlik önlemleri almamıza rağmen,
+      <strong>internet üzerinden veri iletiminin veya elektronik depolamanın %100 güvenli olduğu garanti edilemez</strong>.
+      Bilgilerinizin mutlak güvenliğini taahhüt edemeyiz.
+    </p>
+    <p>
+      Haklarınızı ve özgürlüklerinizi etkileyen bir kişisel veri ihlali durumunda ilgili denetim otoritesini
+      <strong>72 saat</strong> içinde bildirir ve yasal olarak gerektiği hallerde etkilenen kullanıcıları
+      gecikmeksizin bilgilendiririz.
+    </p>
 
-    <h2 id="tr-changes">13. Bu Politikadaki Değişiklikler</h2>
+    <h2 id="tr-liability">14. Sorumluluk Reddi ve Sorumluluğun Sınırlandırılması</h2>
+    <div class="disclaimer-box">
+      <strong>Önemli:</strong> Bu bölümü dikkatlice okuyunuz; Geliştirici'nin sorumluluğunu sınırlandırmaktadır.
+    </div>
+    <p>
+      Uygulama, <strong>"OLDUĞU GİBİ"</strong> ve <strong>"MEVCUT OLDUĞU ŞEKİLDE"</strong> sunulmaktadır;
+      ticari elverişlilik, belirli bir amaca uygunluk veya ihlal etmeme zımni garantileri de dahil olmak
+      üzere, açık veya zımni hiçbir garanti verilmemektedir.
+    </p>
+    <p>Yürürlükteki yasaların izin verdiği azami ölçüde, Geliştirici aşağıdakilerden sorumlu tutulamaz:</p>
+    <ul>
+      <li>Uygulamayı kullanmanızdan veya kullanamamanızdan doğan dolaylı, arızi, özel, sonuçsal veya cezai zararlar.</li>
+      <li>Teknik arızalar, cihaz sorunları veya makul kontrolümüzün dışındaki koşullar nedeniyle oyun verilerinin, ilerlemesinin, XP'nin, serilerin veya uygulama içi içeriklerin kaybı.</li>
+      <li>Uygulamanın veya herhangi bir özelliğinin kesintiye uğraması, askıya alınması veya sonlandırılması.</li>
+      <li>Makul kontrolümüzün dışındaki koşullardan, üçüncü taraf hizmetlerin (Firebase, RevenueCat, Apple) güvenlik ihlalleri dahil olmak üzere, kaynaklanan yetkisiz erişim veya veri değişikliği.</li>
+      <li>Uygulama içi eğitim içeriğinin doğruluğu, güvenilirliği veya eksiksizliği.</li>
+      <li>App Store veya RevenueCat işleme hatalarından kaynaklanan abonelik faydalarının kaybı.</li>
+    </ul>
+    <p>
+      Her halükarda, Geliştirici'nin bu Gizlilik Politikasından veya Uygulamadan kaynaklanan tüm talepler için
+      toplam sorumluluğu, talepten önceki <strong>on iki (12) ay</strong> içinde tarafımıza ödediğiniz tutarı
+      (varsa) aşmayacaktır.
+    </p>
+    <p>
+      Geliştirici, üçüncü taraf hizmetlerin (Firebase, Google, Apple, RevenueCat) veri uygulamalarından
+      sorumlu değildir. Bu hizmetlerin kullanımı, ilgili gizlilik politikaları ve kullanım koşullarıyla
+      yönetilmektedir.
+    </p>
+    <p>
+      Bazı yargı bölgeleri belirli garantilerin hariç tutulmasına veya arızi ya da sonuçsal zararlar için
+      sorumluluğun sınırlandırılmasına izin vermemektedir; bu nedenle yukarıdaki sınırlamalar sizin için
+      kısmen geçerli olmayabilir.
+    </p>
+
+    <h2 id="tr-changes">15. Politikadaki Değişiklikler</h2>
     <p>Uygulamadaki değişiklikleri, yürürlükteki yasaları veya sektör standartlarını yansıtmak için bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler yaptığımızda:</p>
     <ul>
       <li>Bu politikanın üstündeki "Son Güncelleme" tarihini güncelleriz.</li>
-      <li>Güncellenmiş politikayı web sitemizde / App Store sayfamızda yayınlarız.</li>
+      <li>Güncellenmiş politikayı bu URL'de ve App Store sayfamızda yayınlarız.</li>
       <li>Mümkün olduğunda önemli değişiklikler için uygulama içi bildirim göndeririz.</li>
     </ul>
-    <p>Güncellenmiş politika yürürlüğe girdikten sonra Uygulamayı kullanmaya devam etmeniz, revize edilmiş Gizlilik Politikasını kabul ettiğiniz anlamına gelir.</p>
+    <p>
+      Güncellenmiş politika yürürlüğe girdikten sonra Uygulamayı kullanmaya devam etmeniz, revize edilmiş
+      Gizlilik Politikasını kabul ettiğiniz anlamına gelir. Değişikliklere katılmıyorsanız Uygulamayı
+      kullanmayı bırakmalısınız. Bu politikayı periyodik olarak gözden geçirmenizi öneririz.
+    </p>
 
-    <h2 id="tr-contact">14. İletişim</h2>
-    <p>Bu Gizlilik Politikası veya veri uygulamalarımızla ilgili sorularınız, endişeleriniz veya talepleriniz için lütfen bizimle iletişime geçin:</p>
+    <h2 id="tr-contact">16. İletişim</h2>
+    <p>Bu Gizlilik Politikası veya veri uygulamalarımızla ilgili sorularınız, endişeleriniz, talepleriniz veya şikayetleriniz için lütfen bizimle iletişime geçin:</p>
     <ul>
-      <li><strong>Geliştirici:</strong> Muhammed Talha Polat</li>
+      <li><strong>Geliştirici / Veri Sorumlusu:</strong> Muhammed Talha Polat</li>
       <li><strong>E-posta:</strong> <a href="mailto:m.talha.polat25@gmail.com">m.talha.polat25@gmail.com</a></li>
       <li><strong>App Store Sayfası:</strong> Apple App Store'da Learn English With Games</li>
     </ul>
-    <p>Tüm gizlilikle ilgili sorulara <strong>30 iş günü</strong> içinde yanıt vermeyi hedefliyoruz.</p>
+    <p>
+      Tüm gizlilikle ilgili sorulara <strong>30 gün</strong> içinde yanıt vermeyi hedefliyoruz. Acil konular
+      veya veri ihlali bildirimleri için lütfen e-posta konusuna "ACİL" yazınız.
+    </p>
 
     <p class="footer">
       © 2026 Muhammed Talha Polat. Tüm hakları saklıdır.<br/>
-      Bu gizlilik politikası en son 21 Şubat 2026 tarihinde gözden geçirilmiştir.
+      Bu gizlilik politikası en son 21 Şubat 2026 tarihinde gözden geçirilmiş ve güncellenmiştir.
     </p>
 
   </div><!-- /lang-tr -->
@@ -638,7 +1003,7 @@
 </div><!-- /container -->
 
 <script>
-  function switchLang(lang) {
+  function switchLang(lang, event) {
     document.querySelectorAll('.lang-content').forEach(function(el) {
       el.classList.remove('active');
     });
@@ -646,7 +1011,7 @@
       btn.classList.remove('active');
     });
     document.getElementById('lang-' + lang).classList.add('active');
-    event.target.classList.add('active');
+    if (event && event.target) event.target.classList.add('active');
   }
 </script>
 
